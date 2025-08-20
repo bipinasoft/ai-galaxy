@@ -1,4 +1,5 @@
 # Create React components and source files for the AI Galaxy application
+import os
 
 # Create main App component
 app_jsx = '''import React from 'react'
@@ -460,23 +461,40 @@ os.makedirs('src/components/Testimonials', exist_ok=True)
 os.makedirs('src/store', exist_ok=True)
 os.makedirs('src/styles', exist_ok=True)
 
-with open('src/App.jsx', 'w') as f:
-    f.write(app_jsx)
+# helper: remove legacy .js duplicate if present
+def remove_js_duplicate(path_without_ext):
+  js_path = f"{path_without_ext}.js"
+  try:
+    if os.path.exists(js_path):
+      os.remove(js_path)
+      print(f"Removed legacy file: {js_path}")
+  except Exception as e:
+    print(f"Failed to remove {js_path}: {e}")
 
-with open('src/main.jsx', 'w') as f:
-    f.write(main_jsx)
+# write files, cleaning up old .js duplicates first
+remove_js_duplicate('src/App')
+with open('src/App.jsx', 'w', encoding='utf-8') as f:
+  f.write(app_jsx)
 
-with open('src/store/aiStore.js', 'w') as f:
-    f.write(ai_store)
-    
-with open('src/components/ui/Header.jsx', 'w') as f:
-    f.write(header_component)
-    
-with open('src/components/Hero/Hero.jsx', 'w') as f:
-    f.write(hero_component)
-    
-with open('src/components/Hero/GalaxyBackground.jsx', 'w') as f:
-    f.write(galaxy_background)
+remove_js_duplicate('src/main')
+with open('src/main.jsx', 'w', encoding='utf-8') as f:
+  f.write(main_jsx)
+
+remove_js_duplicate('src/store/aiStore')
+with open('src/store/aiStore.js', 'w', encoding='utf-8') as f:
+  f.write(ai_store)
+
+remove_js_duplicate('src/components/ui/Header')
+with open('src/components/ui/Header.jsx', 'w', encoding='utf-8') as f:
+  f.write(header_component)
+
+remove_js_duplicate('src/components/Hero/Hero')
+with open('src/components/Hero/Hero.jsx', 'w', encoding='utf-8') as f:
+  f.write(hero_component)
+
+remove_js_duplicate('src/components/Hero/GalaxyBackground')
+with open('src/components/Hero/GalaxyBackground.jsx', 'w', encoding='utf-8') as f:
+  f.write(galaxy_background)
 
 print("✅ Core React components created!")
 print("Files created:")

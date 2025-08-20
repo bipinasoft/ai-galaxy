@@ -1,3 +1,5 @@
+import os
+
 # Create remaining components and comprehensive CSS
 
 # Pricing Component 
@@ -284,15 +286,27 @@ const Footer = () => {
 
 export default Footer'''
 
-# Save remaining components
-with open('src/components/Pricing/Pricing.jsx', 'w') as f:
-    f.write(pricing_component)
+def remove_js_duplicate(path_without_ext):
+  js_path = f"{path_without_ext}.js"
+  try:
+    if os.path.exists(js_path):
+      os.remove(js_path)
+      print(f"Removed legacy file: {js_path}")
+  except Exception as e:
+    print(f"Failed to remove {js_path}: {e}")
+
+# Save remaining components (remove .js duplicates first)
+remove_js_duplicate('src/components/Pricing/Pricing')
+with open('src/components/Pricing/Pricing.jsx', 'w', encoding='utf-8') as f:
+  f.write(pricing_component)
     
-with open('src/components/Testimonials/Testimonials.jsx', 'w') as f:
-    f.write(testimonials_component)
+remove_js_duplicate('src/components/Testimonials/Testimonials')
+with open('src/components/Testimonials/Testimonials.jsx', 'w', encoding='utf-8') as f:
+  f.write(testimonials_component)
     
-with open('src/components/ui/Footer.jsx', 'w') as f:
-    f.write(footer_component)
+remove_js_duplicate('src/components/ui/Footer')
+with open('src/components/ui/Footer.jsx', 'w', encoding='utf-8') as f:
+  f.write(footer_component)
 
 print("✅ Remaining components created!")
 print("Files created:")

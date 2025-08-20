@@ -1,3 +1,5 @@
+import os
+
 # Create additional key components for the AI Galaxy application
 
 # AI Models Dashboard Component
@@ -576,18 +578,32 @@ const ServicesShowcase = () => {
 
 export default ServicesShowcase'''
 
-# Save the components
-with open('src/components/AIModels/ModelDashboard.jsx', 'w') as f:
-    f.write(model_dashboard)
+# helper to remove legacy .js duplicate
+def remove_js_duplicate(path_without_ext):
+  js_path = f"{path_without_ext}.js"
+  try:
+    if os.path.exists(js_path):
+      os.remove(js_path)
+      print(f"Removed legacy file: {js_path}")
+  except Exception as e:
+    print(f"Failed to remove {js_path}: {e}")
+
+# Save the components (remove .js duplicates first)
+remove_js_duplicate('src/components/AIModels/ModelDashboard')
+with open('src/components/AIModels/ModelDashboard.jsx', 'w', encoding='utf-8') as f:
+  f.write(model_dashboard)
     
-with open('src/components/Chatbot/ChatInterface.jsx', 'w') as f:
-    f.write(chat_interface)
+remove_js_duplicate('src/components/Chatbot/ChatInterface')
+with open('src/components/Chatbot/ChatInterface.jsx', 'w', encoding='utf-8') as f:
+  f.write(chat_interface)
     
-with open('src/components/Training/TrainingDashboard.jsx', 'w') as f:
-    f.write(training_dashboard)
+remove_js_duplicate('src/components/Training/TrainingDashboard')
+with open('src/components/Training/TrainingDashboard.jsx', 'w', encoding='utf-8') as f:
+  f.write(training_dashboard)
     
-with open('src/components/Services/ServicesShowcase.jsx', 'w') as f:
-    f.write(services_showcase)
+remove_js_duplicate('src/components/Services/ServicesShowcase')
+with open('src/components/Services/ServicesShowcase.jsx', 'w', encoding='utf-8') as f:
+  f.write(services_showcase)
 
 print("✅ Additional key components created!")
 print("Files created:")
