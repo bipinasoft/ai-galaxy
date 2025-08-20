@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Galaxy - Explore the Universe of Artificial Intelligence</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-star"></i>
+                <span>AI Galaxy</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#models" class="nav-link">AI Models</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#training" class="nav-link">Training</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button class="btn btn--primary chat-toggle" id="chat-toggle">
+                    <i class="fas fa-comments"></i> Chat
+                </button>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Galaxy Animation -->
+    <section id="home" class="hero">
+        <div class="galaxy-background">
+            <div class="stars" id="stars"></div>
+            <div class="nebula"></div>
+            <div class="particles" id="particles"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="gradient-text">AI Galaxy</span>
+                </h1>
+                <p class="hero-subtitle">Explore the Universe of Artificial Intelligence</p>
+                <p class="hero-description">Advanced AI platform with real-time model training, intelligent chatbots, and enterprise-grade solutions</p>
+                <div class="hero-actions">
+                    <button class="btn btn--primary btn--lg" id="get-started">
+                        <i class="fas fa-rocket"></i> Get Started
+                    </button>
+                    <button class="btn btn--outline btn--lg" id="watch-demo">
+                        <i class="fas fa-play"></i> Watch Demo
+                    </button>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">2.4M+</span>
+                    <span class="stat-label">API Requests</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">99.7%</span>
+                    <span class="stat-label">Success Rate</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15.4K+</span>
+                    <span class="stat-label">Daily Users</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Models Section -->
+    <section id="models" class="models-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>AI Model Universe</h2>
+                <p>Powerful AI models trained on cosmic scales of data</p>
+            </div>
+            <div class="models-grid" id="models-grid">
+                <!-- Models will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>AI Services Galaxy</h2>
+                <p>Comprehensive AI solutions for every business need</p>
+            </div>
+            <div class="services-grid" id="services-grid">
+                <!-- Services will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Dashboard -->
+    <section id="training" class="training-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Model Training Dashboard</h2>
+                <p>Real-time monitoring of AI model training progress</p>
+            </div>
+            <div class="training-dashboard">
+                <div class="training-overview">
+                    <div class="training-cards" id="training-cards">
+                        <!-- Training cards will be populated by JavaScript -->
+                    </div>
+                </div>
+                <div class="training-charts">
+                    <div class="chart-container">
+                        <h3>Training Progress</h3>
+                        <div style="position: relative; height: 300px;">
+                            <canvas id="training-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Model Performance</h3>
+                        <div style="position: relative; height: 300px;">
+                            <canvas id="performance-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Galaxy Plan</h2>
+                <p>Flexible pricing for every stage of your AI journey</p>
+            </div>
+            <div class="pricing-grid" id="pricing-grid">
+                <!-- Pricing cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Users Say</h2>
+                <p>Trusted by leading organizations worldwide</p>
+            </div>
+            <div class="testimonials-grid" id="testimonials-grid">
+                <!-- Testimonials will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Ready to Launch Your AI Journey?</h2>
+                    <p>Get started with AI Galaxy today and transform your business with cutting-edge artificial intelligence.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@aigalaxy.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Silicon Valley, CA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company" class="form-label">Company</label>
+                            <input type="text" id="company" name="company" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn--primary btn--full-width">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-star"></i>
+                        <span>AI Galaxy</span>
+                    </div>
+                    <p>Exploring the infinite possibilities of artificial intelligence</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Platform</h4>
+                        <ul>
+                            <li><a href="#models">AI Models</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#training">Training</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#" target="_blank">Documentation</a></li>
+                            <li><a href="#" target="_blank">API Reference</a></li>
+                            <li><a href="#" target="_blank">Tutorials</a></li>
+                            <li><a href="#" target="_blank">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#" target="_blank">About</a></li>
+                            <li><a href="#" target="_blank">Careers</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#" target="_blank">Privacy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AI Galaxy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Interface -->
+    <div class="chat-container hidden" id="chat-container">
+        <div class="chat-header">
+            <div class="chat-title">
+                <i class="fas fa-robot"></i>
+                <span>AI Assistant</span>
+            </div>
+            <div class="chat-controls">
+                <select id="chat-personality" class="form-control chat-select">
+                    <option value="0">Assistant Alpha</option>
+                    <option value="1">Creative Cosmos</option>
+                    <option value="2">Tech Titan</option>
+                    <option value="3">Data Detective</option>
+                </select>
+                <button class="chat-minimize" id="chat-minimize">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button class="chat-close" id="chat-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    <p>Hello! I'm your AI assistant. How can I help you explore the galaxy of artificial intelligence today?</p>
+                </div>
+            </div>
+        </div>
+        <div class="chat-input-container">
+            <input type="text" id="chat-input" class="chat-input" placeholder="Type your message...">
+            <button id="chat-send" class="chat-send">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay hidden" id="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading AI Galaxy...</p>
+        </div>
+    </div>
+
+    <!-- React mounting point -->
+    <div id="root"></div>
+
+    <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
