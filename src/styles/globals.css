@@ -261,6 +261,18 @@ p {
   color: var(--text-primary);
 }
 
+.brand-logo {
+  display: inline-block;
+  height: 36px;
+  width: auto;
+  border-radius: 6px;
+}
+
+.brand-text {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
 .brand-icon {
   font-size: var(--font-size-2xl);
 }

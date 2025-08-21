@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Menu, X, MessageSquare } from 'lucide-react'
 import { useAIStore } from '../../store/aiStore'
+import Logo from '../../assets/logo.svg'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -35,7 +36,7 @@ const Header = () => {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <nav className="nav-container">
         <div className="nav-brand">
-          <div className="brand-icon">⭐</div>
+          <img src={Logo} alt="AI Galaxy" className="brand-logo" style={{height: 36}} />
           <span className="brand-text">AI Galaxy</span>
         </div>
         
