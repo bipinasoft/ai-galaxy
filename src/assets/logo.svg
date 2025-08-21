@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">AI Galaxy — logo</title>
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A6CF0" />
+      <stop offset="100%" stop-color="#00B7A8" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0A6CF0" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.95" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0A6CF0" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- outer swirl (broken circle) -->
+  <g transform="translate(100,100)">
+    <path d="M -48 0
+             A 48 48 0 1 1 47.9 8"
+          fill="none"
+          stroke="url(#grad1)"
+          stroke-width="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          filter="url(#shadow)"
+          />
+
+    <!-- inner swirl accent -->
+    <path d="M -32 -12
+             A 32 32 0 1 1 31.8 18"
+          fill="none"
+          stroke="url(#grad2)"
+          stroke-width="6"
+          stroke-linecap="round"/>
+
+    <!-- core dot -->
+    <circle cx="0" cy="0" r="14" fill="url(#grad1)" />
+
+    <!-- orbiting dots -->
+    <circle cx="-62" cy="-6" r="4" fill="#0A6CF0" fill-opacity="0.95" />
+    <circle cx="58" cy="30" r="3.5" fill="#00B7A8" />
+    <circle cx="18" cy="-66" r="3" fill="#7C3AED" />
+  </g>
+
+  <!-- logotype -->
+  <g transform="translate(100,160)" text-anchor="middle">
+    <text x="0" y="0" font-family="Inter, Roboto, Arial, sans-serif" font-weight="700" font-size="20" fill="#0A6CF0">AI Galaxy</text>
+  </g>
+</svg>

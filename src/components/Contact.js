@@ -41,7 +41,7 @@ const Contact = () => {
               <Mail size={24} />
               <div>
                 <h4>Email</h4>
-                <p>hello@aigalaxy.com</p>
+                <p>hello@aigalaxy.ai</p>
               </div>
             </div>
             <div className="contact__item">

@@ -137,7 +137,7 @@ npm run deploy
 
 1. **Push to main branch** - GitHub Actions will automatically deploy
 2. **Enable Pages** - Go to Settings > Pages > Source: GitHub Actions
-3. **Visit your site** - Available at `https://bipinasoft.github.io/ai-galaxy/`
+3. **Visit your site** - Available at `https://aigalaxy.ai/`
 
 ### Manual Deployment
 
@@ -152,7 +152,7 @@ npm run deploy
 Create a `.env` file for local development:
 
 ```env
-VITE_API_BASE_URL=https://api.aigalaxy.dev
+VITE_API_BASE_URL=https://api.aigalaxy.ai
 VITE_OPENAI_API_KEY=your_openai_key_here
 VITE_ANALYTICS_ID=your_analytics_id
 ```

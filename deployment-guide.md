@@ -125,10 +125,7 @@ git push origin main
 4. Save settings
 
 ### Step 4: Automatic Deployment
-- GitHub Actions will automatically build and deploy
-- Check **"Actions"** tab to monitor progress
-- Website will be live at: `https://bipinasoft.github.io/ai-galaxy/`
-- Usually takes 3-5 minutes for first deployment
+ Website will be live at: `https://aigalaxy.ai/`
 
 ## 🛠️ Local Development
 

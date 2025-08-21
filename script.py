@@ -40,7 +40,7 @@ project_files = {
             "vite": "^4.4.5",
             "gh-pages": "^6.0.0"
         },
-        "homepage": "https://bipinasoft.github.io/ai-galaxy"
+  "homepage": "https://aigalaxy.ai"
     },
     
     # Vite configuration
@@ -60,11 +60,11 @@ export default defineConfig({
 })''',
 
     # Main index.html
-    'index.html': '''<!doctype html>
+  'index.html': '''<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/galaxy-icon.svg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Galaxy - Explore the Universe of Artificial Intelligence</title>
     <meta name="description" content="Advanced AI platform with real-time model training, intelligent chatbots, and enterprise-grade solutions">
@@ -218,7 +218,7 @@ npm run deploy
 
 1. **Push to main branch** - GitHub Actions will automatically deploy
 2. **Enable Pages** - Go to Settings > Pages > Source: GitHub Actions
-3. **Visit your site** - Available at `https://bipinasoft.github.io/ai-galaxy/`
+  3. **Visit your site** - Available at `https://aigalaxy.ai/`
 
 ### Manual Deployment
 
@@ -233,7 +233,7 @@ npm run deploy
 Create a `.env` file for local development:
 
 ```env
-VITE_API_BASE_URL=https://api.aigalaxy.dev
+VITE_API_BASE_URL=https://api.aigalaxy.ai
 VITE_OPENAI_API_KEY=your_openai_key_here
 VITE_ANALYTICS_ID=your_analytics_id
 ```

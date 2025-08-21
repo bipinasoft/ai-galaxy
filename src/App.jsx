@@ -8,6 +8,7 @@ import ChatInterface from './components/Chatbot/ChatInterface.jsx'
 import Pricing from './components/Pricing/Pricing.jsx'
 import Testimonials from './components/Testimonials/Testimonials.jsx'
 import Footer from './components/ui/Footer.jsx'
+import FAQ from './components/FAQ.jsx'
 import { useAIStore } from './store/aiStore'
 import './styles/globals.css'
 
@@ -24,6 +25,7 @@ function App() {
         <TrainingDashboard />
         <Pricing />
         <Testimonials />
+  <FAQ />
       </main>
       <Footer />
       {isChatOpen && <ChatInterface />}
