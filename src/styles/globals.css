@@ -261,6 +261,29 @@ p {
   color: var(--text-primary);
 }
 
+.brand-logo {
+  display: inline-block;
+  height: 64px; /* desktop */
+  width: auto;
+  border-radius: 6px;
+}
+
+/* medium screens */
+@media (max-width: 1024px) {
+  .brand-logo { height: 56px; }
+}
+
+/* small / mobile */
+@media (max-width: 640px) {
+  .brand-logo { height: 40px; }
+  .brand-text { display: none; }
+}
+
+.brand-text {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
 .brand-icon {
   font-size: var(--font-size-2xl);
 }
