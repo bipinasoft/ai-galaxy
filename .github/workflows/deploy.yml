@@ -2,9 +2,11 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    # deploy from main; include current cleanup branch for testing
+    branches: [ main, cleanup/js-to-jsx ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch: {}
 
 permissions:
   contents: read
@@ -16,38 +18,77 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+  name: Deploy to GitHub Pages
+
+  on:
+    push:
+      # deploy from main; include current cleanup branch for testing
+      branches: [ main, cleanup/js-to-jsx ]
+    pull_request:
+      branches: [ main ]
+    workflow_dispatch: {}
+
+  permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+  concurrency:
+    group: "pages"
+    cancel-in-progress: false
+
+  jobs:
+    deploy:
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+      runs-on: ubuntu-latest
     
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        cache: 'npm'
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
         
-    - name: Install dependencies
-      run: npm ci
+      - name: Install dependencies
+        run: npm ci
       
-    - name: Build
-      run: npm run build
+      - name: Build
+        run: npm run build
+
+      - name: Show build outputs
+        run: |
+          echo "-- package.json (homepage) --"
+          cat package.json
+          echo "-- dist listing --"
+          ls -la ./dist || true
+          echo "-- dist size --"
+          du -sh ./dist || true
+
+      - name: Verify dist
+        run: |
+          if [ -d "./dist" ] && [ "$(ls -A ./dist)" ]; then
+            echo "dist OK"
+          else
+            echo "dist is missing or empty"; exit 1
+          fi
       
-    - name: Setup Pages
-      uses: actions/configure-pages@v4
-      with:
-        enablement: 'github-actions'
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        with:
+          enablement: 'github-actions'
       
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: './dist'
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
         
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
