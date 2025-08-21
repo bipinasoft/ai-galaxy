@@ -402,20 +402,21 @@ dist-ssr
 
 # Save all configuration files
 for filename, content in project_files.items():
-    # Create directory if it doesn't exist
-    os.makedirs(os.path.dirname(filename) if os.path.dirname(filename) else '.', exist_ok=True)
-    
-    if filename.endswith('.json'):
-        with open(filename, 'w') as f:
-            json.dump(content, f, indent=2)
-    else:
-        with open(filename, 'w') as f:
-            f.write(content)
+  # Create directory if it doesn't exist
+  os.makedirs(os.path.dirname(filename) if os.path.dirname(filename) else '.', exist_ok=True)
+
+  if filename.endswith('.json'):
+    with open(filename, 'w', encoding='utf-8') as f:
+      json.dump(content, f, indent=2)
+  else:
+    # Ensure non-JSON content is a string before writing
+    with open(filename, 'w', encoding='utf-8') as f:
+      f.write(str(content))
 
 print("✅ Vite React configuration files created!")
 print("\nFiles created:")
 for filename in project_files.keys():
-    print(f"  - {filename}")
+  print(f"  - {filename}")
 
 print(f"\n📁 Total configuration files: {len(project_files)}")
 print("\n🚀 Ready for Vite React development!")

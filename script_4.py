@@ -1592,8 +1592,8 @@ section {
 }'''
 
 # Save the comprehensive CSS
-with open('src/styles/globals.css', 'w') as f:
-    f.write(css_content)
+with open('src/styles/globals.css', 'w', encoding='utf-8') as f:
+  f.write(css_content)
 
 print("✅ Comprehensive CSS styles created!")
 print("File created:")
