@@ -36,7 +36,7 @@ const Header = () => {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <nav className="nav-container">
         <div className="nav-brand">
-          <img src={Logo} alt="AI Galaxy" className="brand-logo" style={{height: 36}} />
+          <img src={Logo} alt="AI Galaxy" className="brand-logo" />
           <span className="brand-text">AI Galaxy</span>
         </div>
         

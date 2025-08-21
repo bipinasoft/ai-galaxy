@@ -263,9 +263,16 @@ p {
 
 .brand-logo {
   display: inline-block;
-  height: 36px;
+  height: 48px;
   width: auto;
   border-radius: 6px;
+}
+
+@media (max-width: 640px) {
+  .brand-logo {
+    height: 36px;
+  }
+  .brand-text { display: none; }
 }
 
 .brand-text {
