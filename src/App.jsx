@@ -25,7 +25,7 @@ function App() {
         <TrainingDashboard />
         <Pricing />
         <Testimonials />
-  <FAQ />
+        <FAQ />
       </main>
       <Footer />
       {isChatOpen && <ChatInterface />}
